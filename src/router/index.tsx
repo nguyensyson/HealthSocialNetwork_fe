@@ -1,20 +1,17 @@
-import { Route, Routes } from "react-router-dom"
-import MainLayout from "../layouts/MainLayout"
-import Home from "../pages/Home"
+import { Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import MainLayout from "../layouts/MainLayout";
 
-
-const index = () => {
+const Router = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<MainLayout /> }>
-            <Route index element={<Home />} />
-            <Route />
-            <Route />
-        </Route>
-      </Routes>
-    </>
-  )
-}
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        {/* <Route path="profile" element={<Profile />} />
+        <Route path="settings" element={<Settings />} /> */}
+      </Route>
+    </Routes>
+  );
+};
 
-export default index
+export default Router;

@@ -1,19 +1,18 @@
-import { Outlet } from 'react-router-dom'
-import NavBar from '../../components/Nav'
-import Footer from '../../components/Footer'
+import Header from "../../components/Header";
+import { Outlet } from "react-router-dom";
+import "./index.css"
 
-function MainLayout() {
+const MainLayout = () => {
   return (
-    <>
-      <div className="bg-white ">
-        <NavBar></NavBar>
-        <div className="min-h-[500px]  pt-32">
-          <Outlet></Outlet>
+    <div className="min-h-screen flex flex-col bg-black">
+      <Header />
+      <main className="mx-auto w-full max-w-2xl backgroup-main h-lvh border rounded-3xl border-color pt-1">
+        <div className="h-full overflow-y-auto">
+          <Outlet />
         </div>
-        <Footer></Footer>
-      </div>
-    </>
-  )
-}
+      </main>
+    </div>
+  );
+};
 
-export default MainLayout
+export default MainLayout;
