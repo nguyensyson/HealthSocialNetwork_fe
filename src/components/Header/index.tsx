@@ -6,6 +6,7 @@ import { HiHome } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import './index.css'
 
 const Header: React.FC = () => {
@@ -20,6 +21,9 @@ const Header: React.FC = () => {
     setAnchorEl(null);
   };
 
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <header className="bg-black text-white px-4 py-2 sticky top-0 z-50 flex justify-center items-center">
       <div className="max-w-7xl mx-auto flex justify-between items-center w-3/4">
@@ -32,25 +36,29 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex space-x-6 font-medium">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="px-6 py-2 rounded-md nav-item transition-colors text-2xl"
+            className={`px-6 py-2 rounded-md nav-item transition-colors text-2xl ${
+              isActive("/") ? "active" : "" }`}
           >
             <HiHome />
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="px-6 py-2 rounded-md nav-item transition-colors text-2xl"
+            className={`px-6 py-2 rounded-md nav-item transition-colors text-2xl ${
+              isActive("/search") ? "active" : "" }`}
           >
             <RiSearch2Line />
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="px-6 py-2 rounded-md nav-item transition-colors text-2xl"
+            className={`px-6 py-2 rounded-md nav-item transition-colors text-2xl ${
+              isActive("/notification") ? "active" : "" }`}
           >
             <FaRegHeart />
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="px-6 py-2 rounded-md nav-item transition-colors text-2xl"
+            className={`px-6 py-2 rounded-md nav-item transition-colors text-2xl ${
+              isActive("/profile") ? "active" : "" }`}
           >
             <FaRegUser />
           </motion.div>
