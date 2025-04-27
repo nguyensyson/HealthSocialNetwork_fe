@@ -17,7 +17,7 @@ const Home = () => {
         />
         <input
           placeholder="What's new?"
-          className="bg-transparent flex-grow mx-3 text-gray-400 h-full"
+          className="bg-transparent flex-grow mx-3 text-[rgb(119,119,119)] h-full"
         />
 
         <button
