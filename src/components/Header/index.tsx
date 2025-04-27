@@ -111,7 +111,9 @@ const Header: React.FC = () => {
             >
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Logout</MenuItem>
+              <Link to="/logout">
+                <MenuItem>Logout</MenuItem>
+              </Link>
             </Menu>
           </div>
         </div>
